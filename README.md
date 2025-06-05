@@ -1,9 +1,9 @@
 # minimercadoPuc
 🔎 Funcionalidades da Página Web
-##Navegação por âncoras
+# Navegação por âncoras
 Um menu fixo com links que direcionam o usuário diretamente para as seções da página: Início, Produtos, Serviços e Contatos.
 
-##Exibição de Produtos por Categoria
+# Exibição de Produtos por Categoria
 Os produtos estão organizados em três categorias:
 Limpeza: Inclui produtos como Veja e Esponja.
 Bebidas: Água Mineral e Coca-Cola.
@@ -15,12 +15,12 @@ Nome
 Descrição
 Valor
 
-##Seção de Serviços Oferecidos
+# Seção de Serviços Oferecidos
 Apresenta dois serviços:
 Entrega em domicílio
 Cartão fidelidade
 
-##Seção de Contatos
+# Seção de Contatos
 Contém:
 Informações de contato (e-mail e telefone)
 Link para retornar ao topo da página
