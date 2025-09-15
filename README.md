@@ -1,41 +1,34 @@
-# minimercadoPuc
-🔎 Funcionalidades da Página Web
-# Navegação por âncoras
-Um menu fixo com links que direcionam o usuário diretamente para as seções da página: Início, Produtos, Serviços e Contatos.
+# 🛒 Minimercado PUCRS — Sistema Web
 
-# Exibição de Produtos por Categoria
-Os produtos estão organizados em três categorias:
-Limpeza: Inclui produtos como Veja e Esponja.
-Bebidas: Água Mineral e Coca-Cola.
-Hortifruti: Laranja e Maracujá.
+O objetivo é aplicar os conhecimentos de **HTML, CSS (Bootstrap) e JavaScript**, construindo um sistema web para um minimercado.
 
-Cada produto possui:
-Imagem ilustrativa
-Nome
-Descrição
-Valor
+---
 
-# Seção de Serviços Oferecidos
-Apresenta dois serviços:
-Entrega em domicílio
-Cartão fidelidade
+## 📌 Fases do Projeto
 
-# Seção de Contatos
-Contém:
-Informações de contato (e-mail e telefone)
-Link para retornar ao topo da página
+### 🔹 Fase 1
+- Estrutura inicial em **HTML**.
+- Criação de páginas estáticas com informações do minimercado.
+- Navegação básica entre as seções.
 
-🛠 Tecnologias Utilizadas
-HTML5
-Imagens externas via links
+### 🔹 Fase 2
+- Inclusão de **CSS/Bootstrap** para layout responsivo.
+- Implementação de **carrossel de imagens** para promoções.
+- **Formulário de cadastro de clientes** (nome, CPF, endereço, telefone, e-mail, sexo, estado civil, etc.).
+- Escolha do serviço:
+  - Retirada no local.
+  - Tele-entrega com agendamento de **data e horário**.
+- **JavaScript** para:
+  - Relógio em tempo real.
+  - Máscaras de entrada (CPF, CEP, telefone).
+  - Validações adicionais de formulário.
+  - Aviso dinâmico para opção de tele-entrega.
+  - Delay de confirmação antes do envio.
+- **Acessibilidade**:
+  - Uso de textos alternativos (`alt`) em imagens.
+  - Anúncio de erros via `aria-live`.
 
-📄 Estrutura da Página
-<header> com navegação principal
-<section> para organizar conteúdos
-<article> para destacar cada item (produto ou serviço)
-<footer> com informações de contato e direitos autorais
-
+---
 📌 Observações
 Esta é uma página estática e não possui integração com backend.
-
 As imagens dos produtos foram obtidas de fontes públicas na web apenas para fins ilustrativos.
