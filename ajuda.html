@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Minimercado PUCRS — Ajuda</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        body {
+            background: #f8f9fa
+        }
+
+        .shadow-soft {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, .06)
+        }
+
+        .toc a {
+            text-decoration: none
+        }
+
+        code {
+            background: #f1f3f5;
+            padding: .1rem .35rem;
+            border-radius: .35rem
+        }
+
+        .kb {
+            font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace
+        }
+    </style>
+</head>
+
+<body>
+    <header class="bg-white border-bottom py-3 mb-4">
+        <div class="container d-flex justify-content-between align-items-center">
+            <h1 class="h4 m-0">Minimercado PUCRS — Ajuda</h1>
+            <span class="text-muted small">Versão 2.0 • Fases 1 + 2</span>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Sumário -->
+        <div class="row g-4">
+            <aside class="col-lg-3">
+                <nav class="toc position-sticky top-0" style="z-index:10">
+                    <div class="p-3 bg-white rounded-4 border shadow-soft">
+                        <h2 class="h6">Sumário</h2>
+                        <ol class="mb-0 ps-3 small">
+                            <li><a href="#sobre">Sobre o projeto</a></li>
+                            <li><a href="#como-usar">Como usar o site</a></li>
+                            <li><a href="#cadastro">Cadastro e Agendamento</a></li>
+                            <li><a href="#acessibilidade">Acessibilidade</a></li>
+                            <li><a href="#imagens">Imagens e carrossel</a></li>
+                            <li><a href="#estrutura">Estrutura de arquivos</a></li>
+                            <li><a href="#publicacao">Publicação no GitHub Pages</a></li>
+                            <li><a href="#faq">Perguntas frequentes</a></li>
+                            <li><a href="#solucao-problemas">Solução de problemas</a></li>
+                            <li><a href="#historico">Histórico de versões</a></li>
+                            <li><a href="#contato">Contato</a></li>
+                        </ol>
+                    </div>
+                </nav>
+            </aside>
+
+            <section class="col-lg-9">
+                <!-- Sobre -->
+                <article id="sobre" class="mb-4 p-4 bg-white rounded-4 border shadow-soft">
+                    <h2 class="h5">Sobre o projeto</h2>
+                    <p>Este site integra as funcionalidades das <strong>Fases 1 e 2</strong> da disciplina
+                        <em>Fundamentos de Sistemas Web</em> (PUCRS). Reúne catálogo de <strong>Produtos</strong> e
+                        <strong>Serviços</strong>, carrossel de <strong>Destaques</strong>, <strong>Cadastro do
+                            Cliente</strong> com <strong>Agendamento</strong> de retirada/entrega, validações de
+                        formulário, relógio em tempo real e melhorias de acessibilidade.
+                    </p>
+                </article>
+
+                <!-- Como usar -->
+                <article id="como-usar" class="mb-4 p-4 bg-white rounded-4 border shadow-soft">
+                    <h2 class="h5">Como usar o site</h2>
+                    <ol>
+                        <li>No topo há links para <strong>Destaques</strong>, <strong>Cadastro</strong>,
+                            <strong>Produtos</strong>, <strong>Serviços</strong> e <strong>Contatos</strong>.
+                        </li>
+                        <li>O carrossel mostra ofertas com navegação por setas e indicadores. As imagens possuem
+                            <em>alt</em> descritivo.
+                        </li>
+                        <li>Na seção <strong>Cadastro</strong>, preencha seus dados. Erros são exibidos abaixo dos
+                            campos e anunciados via <code>aria-live</code>.</li>
+                        <li>Escolha o serviço (<strong>Retirada</strong> ou <strong>Tele‑entrega</strong>), selecione
+                            <strong>data</strong> e <strong>horário</strong> (intervalos de 15 min).
+                        </li>
+                        <li>Ao clicar em <strong>Cadastrar</strong> e os dados estiverem válidos, o sistema exibe um
+                            <strong>delay de 20s</strong> indicando validação em andamento. Depois disso, o envio é
+                            concluído.
+                        </li>
+                    </ol>
+                </article>
+
+                <!-- Cadastro -->
+                <article id="cadastro" class="mb-4 p-4 bg-white rounded-4 border shadow-soft">
+                    <h2 class="h5">Cadastro e Agendamento</h2>
+                    <ul>
+                        <li><strong>Dados pessoais:</strong> nome, CPF, telefone, e‑mail, sexo, estado civil.</li>
+                        <li><strong>Endereço:</strong> CEP, logradouro, número, complemento, bairro, cidade, estado.
+                        </li>
+                        <li><strong>Serviço:</strong> retirada no local ou tele‑entrega. Alerta contextual aparece ao
+                            marcar tele‑entrega.</li>
+                        <li><strong>Agendamento:</strong> escolha de data (<code>type="date"</code>) e horário
+                            (<code>type="time"</code>, <code>step="900"</code>).</li>
+                    </ul>
+                    <h3 class="h6 mt-3">Validações implementadas</h3>
+                    <ul class="small">
+                        <li>CPF com <em>dígitos verificadores</em> (função <code>validarCPF</code>).</li>
+                        <li>Telefone no formato <code>(DD) 9XXXX-XXXX</code> e CEP <code>00000-000</code> (máscara +
+                            regex).</li>
+                        <li>Bloqueio de agendamento no passado.</li>
+                        <li>Mensagens de erro exibidas somente quando o campo está inválido (Bootstrap
+                            <code>.was-validated</code> + <code>.invalid-feedback</code>).
+                        </li>
+                    </ul>
+                </article>
+
+                <!-- Acessibilidade -->
+                <article id="acessibilidade" class="mb-4 p-4 bg-white rounded-4 border shadow-soft">
+                    <h2 class="h5">Acessibilidade</h2>
+                    <ul>
+                        <li><code>alt</code> descritivo em todas as imagens (carrossel e produtos).</li>
+                        <li>Feedbacks de erro anunciados via <code>aria-live</code> em regiões específicas.</li>
+                        <li>Uso de <code>&lt;label&gt;</code>, <code>&lt;fieldset&gt;</code> e
+                            <code>&lt;legend&gt;</code> para associação semântica.
+                        </li>
+                        <li>Navegação por teclado e foco preservados (componentes Bootstrap padrão).</li>
+                    </ul>
+                </article>
+
+                <!-- Imagens -->
+                <article id="imagens" class="mb-4 p-4 bg-white rounded-4 border shadow-soft">
+                    <h2 class="h5">Imagens e carrossel</h2>
+                    <p>O carrossel usa classe <code>.carrossel-imagem</code> com altura fixa para uniformizar exibição:
+                    </p>
+                    <pre class="bg-light p-3 rounded-3 border small mb-3"><code>.carrossel-imagem{ height:380px; object-fit:cover; object-position:center; }
+                    @media (max-width:576px){ .carrossel-imagem{ height:240px; } }</code></pre>
+                    <ul>
+                        <li><strong>Tamanho recomendado:</strong> <code>1280 × 380 px</code> (desktop) e
+                            <code>576 × 240 px</code> (mobile opcional).
+                        </li>
+                        <li>Formato <code>.jpg</code> ou <code>.png</code>, preferencialmente &lt; 200 KB.</li>
+                        <li>Coloque os arquivos em <code>assets/</code> e ajuste os <code>src</code> no
+                            <code>index.html</code> caso renomeie.
+                        </li>
+                    </ul>
+                </article>
+
+                <!-- Estrutura -->
+                <article id="estrutura" class="mb-4 p-4 bg-white rounded-4 border shadow-soft">
+                    <h2 class="h5">Estrutura de arquivos</h2>
+                    <pre class="bg-light p-3 rounded-3 border small"><code>/
+                        ├─ index.html      # Página principal (Fase 1 + Fase 2)
+                        ├─ styles.css      # Estilos do projeto
+                        ├─ app.js          # Lógica JS (máscaras, validações, delay de 20s, relógio)
+                        └─ assets/
+                        ├─ agua.png     ├─ cocacola.png ├─ esponja.png
+                        ├─ laranja.png  ├─ maracuja.png └─ veja.png
+                        ├─ hortifruticarrosel.png  ├─ vejacarrosel.png └─ cocacolacarrosel.png</code></pre>
+                    <p class="small mb-0">Observação: mantenha os nomes de arquivos consistentes entre a pasta
+                        <code>assets/</code> e os caminhos usados no HTML.
+                    </p>
+                </article>
+
+                <!-- Publicação -->
+                <article id="publicacao" class="mb-4 p-4 bg-white rounded-4 border shadow-soft">
+                    <h2 class="h5">Publicação no GitHub Pages</h2>
+                    <ol>
+                        <li>Crie um repositório (ex.: <span class="kb">minimercado-pucrs</span>).</li>
+                        <li>Envie <span class="kb">index.html</span>, <span class="kb">styles.css</span>, <span
+                                class="kb">app.js</span> e a pasta <span class="kb">assets/</span>.</li>
+                        <li>Em <strong>Settings → Pages</strong>, configure:<br> <em>Source</em>: Deploy from a branch •
+                            <em>Branch</em>: main /root.
+                        </li>
+                        <li>Aguarde o endereço do site (ex.: <span
+                                class="kb">https://seu-usuario.github.io/minimercado-pucrs/</span>).</li>
+                    </ol>
+                </article>
+
+                <!-- FAQ -->
+                <article id="faq" class="mb-4 p-4 bg-white rounded-4 border shadow-soft">
+                    <h2 class="h5">Perguntas frequentes</h2>
+                    <details class="mb-2">
+                        <summary><strong>As mensagens de erro ficam sempre visíveis. O que fazer?</strong></summary>
+                        <div class="small mt-2">No <code>styles.css</code>, garanta que <code>.invalid-feedback</code>
+                            <em>não</em> esteja forçando <code>display:block</code>. Use:<br>
+                            <code>.invalid-feedback{display:none}</code> e
+                            <code>.was-validated .form-control:invalid ~ .invalid-feedback{display:block}</code>.
+                        </div>
+                    </details>
+                    <details class="mb-2">
+                        <summary><strong>Quero mudar o tempo do delay antes do envio.</strong></summary>
+                        <div class="small mt-2">No <code>app.js</code>, em <code>aoEnviarFormulario</code>, altere a
+                            variável <code>restante = 20</code>.</div>
+                    </details>
+                    <details class="mb-2">
+                        <summary><strong>Qual o melhor tamanho de imagem para o carrossel?</strong></summary>
+                        <div class="small mt-2">Exporte em <code>1280×380</code> px. Para mobile, opcionalmente
+                            <code>576×240</code> px.
+                        </div>
+                    </details>
+                </article>
+
+                <!-- Solução de problemas -->
+                <article id="solucao-problemas" class="mb-4 p-4 bg-white rounded-4 border shadow-soft">
+                    <h2 class="h5">Solução de problemas</h2>
+                    <ul>
+                        <li><strong>Carrossel distorce imagens:</strong> padronize as imagens no tamanho recomendado e
+                            confira a classe <code>.carrossel-imagem</code>.</li>
+                        <li><strong>Formulário não envia:</strong> verifique mensagens em vermelho, campos obrigatórios
+                            e se a data/horário são futuros.</li>
+                        <li><strong>Sem ícones/estilos do Bootstrap:</strong> confirme a inclusão do bundle JS/CSS via
+                            CDN no <code>index.html</code>.</li>
+                    </ul>
+                </article>
+
+                <!-- Histórico -->
+                <article id="historico" class="mb-4 p-4 bg-white rounded-4 border shadow-soft">
+                    <h2 class="h5">Histórico de versões</h2>
+                    <ul class="small mb-0">
+                        <li><strong>v2.0</strong>: Unificação Fase 1 + Fase 2; carrossel com imagens locais; validações
+                            (CPF/CEP/telefone), relógio, delay de 20s; acessibilidade.</li>
+                        <li><strong>v1.0</strong>: Estrutura inicial da Fase 1 (produtos, serviços e contatos).</li>
+                    </ul>
+                </article>
+
+                <!-- Contato -->
+                <article id="contato" class="mb-5 p-4 bg-white rounded-4 border shadow-soft">
+                    <h2 class="h5">Contato</h2>
+                    <p class="mb-1">Suporte/autor: <strong>Seu Nome</strong></p>
+                    <p class="mb-1">E‑mail: <a href="mailto:seu.email@exemplo.com">seu.email@exemplo.com</a></p>
+                    <p class="mb-0">Disciplina: Fundamentos de Sistemas Web — PUCRS</p>
+                </article>
+            </section>
+        </div>
+    </main>
+
+    <footer class="container text-center text-muted small pb-5">
+        <hr>
+        <p class="mb-0">© 2024 Minimercado PUCRS — Documento de ajuda</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

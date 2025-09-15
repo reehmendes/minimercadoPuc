@@ -1,105 +1,391 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minimercado</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Minimercado PUCRS — Fases 1 e 2</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- CSS do projeto -->
+    <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
-    <header>
-        <h1 id="inicio">Minimercado PUCRS - Fase 1</h1>
-        <nav>
-            <ul>
-                <li><a href="#inicio">Início</a></li>
-                <li><a href="#produtos">Produtos</a></li>
-                <li><a href="#servicos">Serviços</a></li>
-                <li><a href="#contatos">Contatos</a></li>
-            </ul>
-        </nav>
+    <!-- NAV + relógio -->
+    <header class="hero py-3 border-bottom">
+        <div class="container d-flex flex-wrap align-items-center justify-content-between">
+            <a href="#inicio" class="navbar-brand h4 m-0 text-decoration-none">Minimercado PUCRS</a>
+            <nav class="nav gap-3">
+                <a class="nav-link px-0" href="#destaques">Destaques</a>
+                <a class="nav-link px-0" href="#cadastro">Cadastro</a>
+                <a class="nav-link px-0" href="#produtos">Produtos</a>
+                <a class="nav-link px-0" href="#servicos">Serviços</a>
+                <a class="nav-link px-0" href="#contatos">Contatos</a>
+                <a class="nav-link px-0" href="ajuda.html">Ajuda</a>
+            </nav>
+            <div class="small text-end">
+                <span class="d-block">Data/Hora atual:</span>
+                <strong id="relogio" aria-live="polite">--/--/---- --:--:--</strong>
+            </div>
+        </div>
     </header>
 
-    <!-- Produtos -->
-    <section>
-        <h2 id="produtos">Produtos</h2>
+    <!-- Carrossel (FASE 2) -->
+    <main id="inicio"></main>
+    <section id="destaques" class="container my-4">
+        <h2 class="h4 mb-3">Destaques</h2>
+        <div id="carrosselPromocoes" class="carousel slide" data-bs-ride="carousel" aria-label="Carrossel de ofertas">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carrosselPromocoes" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carrosselPromocoes" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carrosselPromocoes" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+            </div>
 
-        <!-- Categoria 1 -->
-        <h3>Limpeza</h3>
-        <article>
-            <h4>Veja</h4>
-            <img src="https://shopee.com.br/blog/wp-content/uploads/2021/08/Limpador-com-Cloro-300x300.png" alt="veja"
-                width="200px" height="200px">
-            <p><strong>Descrição:</strong> O melhor produto de limpeza</p>
-            <p><strong>Valor:</strong> R$3,99</p>
-        </article>
-        <article>
-            <h4>Esponja</h4>
-            <img src="https://d13z5xavn0qtt9.cloudfront.net/Custom/Content/Products/10/69/106944_esponja-dupla-face-grande-100x180-amarela-e-verde-bettanin-144_z1_637756098095468086.webp" alt="esponja"
-                width="200px" height="200px">
-            <p><strong>Descrição:</strong> A esponja é indicada para limpeza leve como vidros, cristais, porcelanas, aço inox e antiaderentes.</p>
-            <p><strong>Valor:</strong> R$1,50</p>
-        </article>
+            <div class="carousel-inner rounded-4 shadow-sm">
+                <div class="carousel-item active" data-bs-interval="4000">
+                    <img src="./assets/cocacolacarrosel.png" class="d-block w-100 carrossel-imagem"
+                        alt="Lata de refrigerante em fundo vermelho com chamada de oferta" />
+                    <div class="carousel-caption">
+                        <h5>Bebidas em oferta</h5>
+                        <p class="m-0">Refrigerantes e águas com até 20% OFF.</p>
+                    </div>
+                </div>
+                <div class="carousel-item" data-bs-interval="4000">
+                    <img src="./assets/hortifruticarrosel.png" class="d-block w-100 carrossel-imagem"
+                        alt="Laranjas frescas com folhas verdes e chamada de hortifruti selecionado" />
+                    <div class="carousel-caption">
+                        <h5>Hortifruti selecionado</h5>
+                        <p class="m-0">Frutas da estação direto do produtor.</p>
+                    </div>
+                </div>
+                <div class="carousel-item" data-bs-interval="4000">
+                    <img src="./assets/vejacarrosel.png" class="d-block w-100 carrossel-imagem"
+                        alt="Produto de limpeza multiuso sobre bancada com luvas amarelas" />
+                    <div class="carousel-caption">
+                        <h5>Limpeza</h5>
+                        <p class="m-0">Tudo para sua casa ficar brilhando.</p>
+                    </div>
+                </div>
+            </div>
 
-        <!-- Categoria 2 -->
-        <h3>Bebidas</h3>
-        <article>
-            <h4>Água</h4>
-            <img src="https://aguamineralhydrate.com.br/wp-content/uploads/2016/02/Garrafa-Agua-Mineral-1-5-litro-entrega.jpg" alt="agua"
-                width="200px" height="200px">
-            <p><strong>Descrição:</strong> Água Mineral</p>
-            <p><strong>Valor:</strong> R$1,00</p>
-        </article>
-        <article>
-            <h4>Cola Cola</h4>
-            <img src="https://carrefourbrfood.vtexassets.com/arquivos/ids/119765719/coca-cola-lata-350-ml-1.jpg?v=638224488171270000" alt="coca-cola"
-                width="200px" height="200px">
-            <p><strong>Descrição:</strong>Refrigerante Carbonatado</p>
-            <p><strong>Valor:</strong> R$2,99</p>
-        </article>
-
-        <!-- Categoria 3 -->
-        <h3>Hortifruti</h3>
-        <article>
-            <h4>Laranja</h4>
-            <img src="https://frutasdobrasil.org/wp-content/uploads/2021/09/AdobeStock_72468391-477x375.jpeg" alt="laranja"
-                width="200px" height="200px">
-            <p><strong>Descrição:</strong> Laranja Lima</p>
-            <p><strong>Valor:</strong> R$5,99KG</p>
-        </article>
-        <article>
-            <h4>Maracujá</h4>
-            <img src="https://vasoeflor.cdn.magazord.com.br/img/2022/07/produto/1090/muda-maracuja-acido-90cm.jpg?ims=fit-in/800x800/filters:fill(white)" alt="maracuja"
-                width="200px" height="200px">
-            <p><strong>Descrição:</strong> Maracujá organico</p>
-            <p><strong>Valor:</strong> R$8,99KG</p>
-        </article>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carrosselPromocoes"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carrosselPromocoes"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Próximo</span>
+            </button>
+        </div>
     </section>
 
-    <!-- Serviços -->
-    <section>
-        <h2 id="servicos">Serviços</h2>
-        <article>
-            <h4>Entrega em Domicílio</h4>
-            <p>Receba seus produtos em casa com rapidez e segurança.</p>
-            <p>Taxa: R$ 5,00</p>
-        </article>
-        <article>
-            <h4>Cartão Fidelidade</h4>
-            <p>Acumule pontos e troque por descontos em suas compras.</p>
-            <p>Grátis para clientes cadastrados</p>
-        </article>
+    <!-- Cadastro + Agendamento (FASE 2) -->
+    <section id="cadastro" class="container my-4">
+        <h2 class="h4 mb-3">Cadastro do Cliente</h2>
+
+        <form id="formCliente" action="/cadastrar-cliente" method="POST" novalidate class="form-section"
+            aria-describedby="mensagemFormulario">
+            <div id="mensagemFormulario" class="alert alert-info" role="status">
+                Preencha os campos obrigatórios (marcados com <span class="text-danger">*</span>). Campos com erro serão
+                anunciados.
+            </div>
+
+            <!-- Dados pessoais -->
+            <fieldset class="mb-4">
+                <legend class="h5">Dados Pessoais</legend>
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <label for="nome" class="form-label required">Nome completo</label>
+                        <input type="text" class="form-control" id="nome" name="nome" placeholder="Seu nome completo"
+                            minlength="3" required />
+                        <div class="invalid-feedback">Informe ao menos 3 caracteres para o nome.</div>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="cpf" class="form-label required">CPF</label>
+                        <input type="text" class="form-control" id="cpf" name="cpf" inputmode="numeric"
+                            placeholder="000.000.000-00" required />
+                        <div class="invalid-feedback">Digite um CPF válido (ex.: 123.456.789-09).</div>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="telefone" class="form-label required">Telefone</label>
+                        <input type="tel" class="form-control" id="telefone" name="telefone"
+                            placeholder="(99) 99999-9999" required />
+                        <div class="invalid-feedback">Use o formato (DD) 9XXXX-XXXX.</div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="email" class="form-label required">E-mail</label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="voce@exemplo.com"
+                            required />
+                        <div class="invalid-feedback">Informe um e-mail válido.</div>
+                    </div>
+                    <div class="col-md-6">
+                        <span class="form-label d-block required">Sexo</span>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="sexo" id="sexoMasculino"
+                                value="masculino" required />
+                            <label class="form-check-label" for="sexoMasculino">Masculino</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="sexo" id="sexoFeminino" value="feminino"
+                                required />
+                            <label class="form-check-label" for="sexoFeminino">Feminino</label>
+                        </div>
+                        <div class="invalid-feedback">Selecione uma opção.</div>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="estadoCivil" class="form-label required">Estado Civil</label>
+                        <select id="estadoCivil" name="estadoCivil" class="form-select" required>
+                            <option value="">-- Selecione --</option>
+                            <option value="solteiro">Solteiro(a)</option>
+                            <option value="casado">Casado(a)</option>
+                            <option value="divorciado">Divorciado(a)</option>
+                            <option value="viuvo">Viúvo(a)</option>
+                        </select>
+                        <div class="invalid-feedback">Escolha uma opção.</div>
+                    </div>
+                </div>
+            </fieldset>
+
+            <!-- Endereço -->
+            <fieldset class="mb-4">
+                <legend class="h5">Endereço</legend>
+                <div class="row g-3">
+                    <div class="col-md-3">
+                        <label for="cep" class="form-label required">CEP</label>
+                        <input type="text" class="form-control" id="cep" name="cep" inputmode="numeric"
+                            placeholder="00000-000" required />
+                        <div class="invalid-feedback">CEP no formato 00000-000.</div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="logradouro" class="form-label required">Logradouro</label>
+                        <input type="text" class="form-control" id="logradouro" name="logradouro" required />
+                        <div class="invalid-feedback">Informe o logradouro.</div>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="numero" class="form-label required">Número</label>
+                        <input type="number" class="form-control" id="numero" name="numero" min="1" required />
+                        <div class="invalid-feedback">Número inválido.</div>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="complemento" class="form-label">Complemento</label>
+                        <input type="text" class="form-control" id="complemento" name="complemento" />
+                    </div>
+                    <div class="col-md-4">
+                        <label for="bairro" class="form-label required">Bairro</label>
+                        <input type="text" class="form-control" id="bairro" name="bairro" required />
+                        <div class="invalid-feedback">Informe o bairro.</div>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="cidade" class="form-label required">Cidade</label>
+                        <input type="text" class="form-control" id="cidade" name="cidade" required />
+                        <div class="invalid-feedback">Informe a cidade.</div>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="estado" class="form-label required">Estado</label>
+                        <select id="estado" name="estado" class="form-select" required>
+                            <option value="">-- Selecione --</option>
+                            <option>AC</option>
+                            <option>AL</option>
+                            <option>AP</option>
+                            <option>AM</option>
+                            <option>BA</option>
+                            <option>CE</option>
+                            <option>DF</option>
+                            <option>ES</option>
+                            <option>GO</option>
+                            <option>MA</option>
+                            <option>MT</option>
+                            <option>MS</option>
+                            <option>MG</option>
+                            <option>PA</option>
+                            <option>PB</option>
+                            <option>PR</option>
+                            <option>PE</option>
+                            <option>PI</option>
+                            <option>RJ</option>
+                            <option>RN</option>
+                            <option>RS</option>
+                            <option>RO</option>
+                            <option>RR</option>
+                            <option>SC</option>
+                            <option>SP</option>
+                            <option>SE</option>
+                            <option>TO</option>
+                        </select>
+                        <div class="invalid-feedback">Selecione o estado.</div>
+                    </div>
+                </div>
+            </fieldset>
+
+            <!-- Serviço + Agendamento -->
+            <fieldset class="mb-4">
+                <legend class="h5" id="servicos">Escolha do Serviço e Agendamento</legend>
+
+                <!-- SERVIÇOS (FASE 1) -->
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <div class="p-3 border rounded-4 bg-white shadow-sm h-100">
+                            <h4 class="h6">Entrega em Domicílio</h4>
+                            <p class="mb-1">Receba seus produtos em casa com rapidez e segurança.</p>
+                            <p class="fw-bold m-0">Taxa: R$ 5,00</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="p-3 border rounded-4 bg-white shadow-sm h-100">
+                            <h4 class="h6">Cartão Fidelidade</h4>
+                            <p class="mb-1">Acumule pontos e troque por descontos.</p>
+                            <p class="fw-bold m-0">Grátis para clientes cadastrados.</p>
+                        </div>
+                    </div>
+                </div>
+                <br>
+
+                <div class="row g-3 align-items-end">
+                    <div class="col-md-6">
+                        <h4 class="h6">Forma</h4>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="servico" id="servicoRetirada"
+                                value="retirada" required />
+                            <label class="form-check-label" for="servicoRetirada">Retirada no local</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="servico" id="servicoEntrega"
+                                value="entrega" required />
+                            <label class="form-check-label" for="servicoEntrega">Tele-entrega</label>
+                        </div>
+                        <div class="invalid-feedback">Selecione uma opção de serviço.</div>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="dataAgendamento" class="form-label required">Data</label>
+                        <input type="date" class="form-control" id="dataAgendamento" name="data" required />
+                        <div class="invalid-feedback">Escolha uma data.</div>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="horaAgendamento" class="form-label required">Horário</label>
+                        <input type="time" class="form-control" id="horaAgendamento" name="hora" step="900" required />
+                        <div class="invalid-feedback">Escolha um horário.</div>
+                    </div>
+                    <div class="col-12">
+                        <div class="alert alert-warning d-none" id="avisoEnderecoEntrega" role="alert">
+                            Para tele-entrega, confirme o endereço acima. Caso necessário, atualize antes de agendar.
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+
+            <div class="d-flex gap-2">
+                <button class="btn btn-primary" type="submit" id="btnSalvar">Cadastrar</button>
+                <button class="btn btn-outline-secondary" type="reset">Limpar</button>
+            </div>
+            <div id="resumoErros" class="mt-3 text-danger" aria-live="assertive"></div>
+            <div id="mensagemSucessoDelay" class="alert alert-success mt-3 d-none" role="status" aria-live="polite">
+            </div>
+        </form>
     </section>
 
-    <!-- Rodapé -->
-    <section>
-        <h2 id="contatos">Contatos</h2>
-        <footer>
-            <p>&copy; 2024 Minimercado PUCRS - Fase 1 - Todos os direitos reservados a <strong>RM</strong></p>
-            <p>Contato: contatoprofissional@minimercadopucrsfase1.com | Telefone: (24) 9888-8888</p>
-            <p>Desenvolvido por Renata Mendes</p>
-            <a href="#inicio"><strong>Retornar ao Topo</strong></a>
+    <!-- PRODUTOS (FASE 1) -->
+    <section id="produtos" class="container my-5">
+        <h2 class="h4 mb-3">Produtos</h2>
+
+        <!-- Limpeza -->
+        <h3 class="h5 mt-3">Limpeza</h3>
+        <div class="row g-3">
+            <div class="col-12 col-sm-6 col-lg-3">
+                <div class="card h-100 shadow-sm">
+                    <img src="./assets/veja.png" class="card-img-top" alt="Produto de limpeza multiuso">
+                    <div class="card-body">
+                        <h4 class="card-title h6 mb-1">Veja</h4>
+                        <p class="card-text small mb-1"><strong>Descrição:</strong> O melhor produto de limpeza.</p>
+                        <p class="card-text fw-bold mb-0">R$ 3,99</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-3">
+                <div class="card h-100 shadow-sm">
+                    <img src="./assets/esponja.png" class="card-img-top" alt="Esponja dupla face para limpeza">
+                    <div class="card-body">
+                        <h4 class="card-title h6 mb-1">Esponja</h4>
+                        <p class="card-text small mb-1">Indicado para limpeza leve de louças, vidros e antiaderentes.
+                        </p>
+                        <p class="card-text fw-bold mb-0">R$ 1,50</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bebidas -->
+        <h3 class="h5 mt-4">Bebidas</h3>
+        <div class="row g-3">
+            <div class="col-12 col-sm-6 col-lg-3">
+                <div class="card h-100 shadow-sm">
+                    <img src="./assets/agua.png" class="card-img-top" alt="Garrafa de água mineral">
+                    <div class="card-body">
+                        <h4 class="card-title h6 mb-1">Água</h4>
+                        <p class="card-text small mb-1">Água mineral.</p>
+                        <p class="card-text fw-bold mb-0">R$ 1,00</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-3">
+                <div class="card h-100 shadow-sm">
+                    <img src="./assets/cocacola.png" class="card-img-top" alt="Lata de refrigerante">
+                    <div class="card-body">
+                        <h4 class="card-title h6 mb-1">Coca-Cola</h4>
+                        <p class="card-text small mb-1">Refrigerante carbonatado.</p>
+                        <p class="card-text fw-bold mb-0">R$ 2,99</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hortifruti -->
+        <h3 class="h5 mt-4">Hortifruti</h3>
+        <div class="row g-3">
+            <div class="col-12 col-sm-6 col-lg-3">
+                <div class="card h-100 shadow-sm">
+                    <img src="./assets/laranja.png" class="card-img-top" alt="Laranjas frescas">
+                    <div class="card-body">
+                        <h4 class="card-title h6 mb-1">Laranja</h4>
+                        <p class="card-text small mb-1">Laranja lima.</p>
+                        <p class="card-text fw-bold mb-0">R$ 5,99/kg</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-3">
+                <div class="card h-100 shadow-sm">
+                    <img src="./assets/maracuja.png" class="card-img-top" alt="Maracujá fresco">
+                    <div class="card-body">
+                        <h4 class="card-title h6 mb-1">Maracujá</h4>
+                        <p class="card-text small mb-1">Maracujá orgânico.</p>
+                        <p class="card-text fw-bold mb-0">R$ 8,99/kg</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTATOS (FASE 1) -->
+    <section id="contatos" class="container my-5">
+        <h2 class="h4 mb-3">Contatos</h2>
+        <footer class="p-3 border rounded-4 bg-white shadow-sm">
+            <p class="mb-1">&copy; 2024 Minimercado PUCRS — Todos os direitos reservados a <strong>RM</strong></p>
+            <p class="mb-1">Contato: contatoprofissional@minimercadopucrs.com | Telefone: (24) 9888-8888</p>
+            <p class="mb-2">Desenvolvido por Renata Mendes</p>
+            <a href="#inicio" class="btn btn-sm btn-outline-primary">Retornar ao topo</a>
         </footer>
     </section>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- JS do projeto -->
+    <script src="app.js"></script>
 </body>
+
 </html>

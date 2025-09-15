@@ -1,0 +1,64 @@
+:root {
+    --cor-marca: #0d6efd;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #f8f9fa;
+}
+
+header.hero {
+    background: linear-gradient(180deg, #e9f1ff, #fff);
+}
+
+.required::after {
+    content: " *";
+    color: #dc3545;
+}
+
+.form-section {
+    background: #fff;
+    border-radius: 1rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .06);
+    padding: 1.5rem;
+}
+
+.carousel-caption {
+    background: rgba(0, 0, 0, .45);
+    border-radius: .5rem;
+}
+
+/* feedback só quando inválido */
+.invalid-feedback {
+    display: none;
+}
+
+.was-validated .form-control:invalid~.invalid-feedback,
+.was-validated .form-select:invalid~.invalid-feedback,
+.was-validated .form-check-input:invalid~.invalid-feedback {
+    display: block;
+}
+
+/* Carrossel com imagens uniformes */
+.carrossel-imagem {
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+    object-position: center;
+}
+
+@media (max-width:576px) {
+    .carrossel-imagem {
+        height: 240px;
+    }
+}
+
+/* Cards de produtos */
+.card-img-top {
+    height: 180px;
+    object-fit: contain;
+    background: #fff;
+}
